@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
+	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	<script src="https://code.angularjs.org/1.4.8/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+	<script src="angular-dragdrop.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="codingExercise_style.css">
+	<script src="codingExercise_aj.js"></script>
+</head>
+<body ng-app='myApp'>
+	<div ng-controller='ctrl1'>
+		<div id="div1" data-drop="true" ng-model="list0" jqyoui-droppable ng-mouseenter="dropIcon()"ondrop="dropComplete(event)" ondragover="allowDrop(event)">
+			<div class="divIcon" ng-show="ini">
+				<div class="drag-{{icon_status}} iconPart" data-drage="false" ng-model="list0" jqyoui-droppable ng-hide="!list0.title">
+				</div>
+				<p class="fn caption-{{icon_status}}">{{list0.title}}</p>
+			</div class>
+
+			<div class="divIcon ph" ng-show="p1">
+				
+			</div>
+
+			<div class="divIcon ph" ng-show="p2">
+				
+			</div>
+
+			<div class="divIcon ph" ng-show="p3">
+				
+			</div>
+		</div>
+
+
+		<div id="div2">
+			<div class="divc" ng-mouseup="dragIconAdd()" data-drag="true" ng-model="list1" jqyoui-draggable="{animate:true}" ng-hide="!list1.title" style="cursor: pointer;">
+				<div id="div_addIcon">
+					
+				</div>
+				<p class="fn" style="padding-left: 28px;">{{list1.title}}</p>
+			</div>
+
+			<div class="divc" ng-mouseup="dragIconSub()"  data-drag="true" ng-model="list2" jqyoui-draggable="{animate:true}" ng-hide="!list2.title" style="cursor: pointer;">
+				<div id="div_subIcon">
+			
+				</div>
+				<p class="fn" style="padding-left: 10px;">
+					{{list2.title}}
+				</p>
+			</div>
+
+			<div class="divc" ng-mouseup="dragIconFoo()"  data-drag="true" ng-model="list3" jqyoui-draggable="{animate:true}" ng-hide="!list3.title" style="cursor: pointer;">
+				<div id="div_fooIcon">
+					
+				</div>
+				<p class="fn" style="padding-left: 28px;">
+					{{list3.title}}
+				</p>
+			</div>
+
+			<div class="divc" ng-mouseup="dragIconCom()"  data-drag="true" ng-model="list4" jqyoui-draggable="{animate:true}" ng-hide="!list4.title" style="cursor: pointer;">
+				<div id="div_complicateIcon" class="iconPart">
+					
+				</div>
+				<p class="fn" style="padding-left: 5px;">
+					{{list4.title}}
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
